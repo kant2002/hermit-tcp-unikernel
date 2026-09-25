@@ -1,0 +1,15 @@
+[package]
+name = "hermit"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[target.'cfg(target_os = "hermit")'.dependencies]
+#hermit = { git = "https://github.com/hermit-os/hermit-rs.git", tag = "hermit-0.13.2", version = "0.13.2" }
+hermit = { git = "https://github.com/hermit-os/hermit-rs.git" }
+#hermit = { path = "../hermit-rs/hermit" }
+#hermit-kernel = { path = "../kernel" }
+
+[features]
+default = ["hermit/acpi", "hermit/pci", "hermit/pci-ids", "hermit/tcp"]
